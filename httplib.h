@@ -337,10 +337,10 @@ using socket_t = int;
 #endif
 #endif // CPPHTTPLIB_USE_NON_BLOCKING_GETADDRINFO
 
-#include <openssl/err.h>
-#include <openssl/evp.h>
-#include <openssl/ssl.h>
-#include <openssl/x509v3.h>
+#include "openssl/err.h"
+#include "openssl/evp.h"
+#include "openssl/ssl.h"
+#include "openssl/x509v3.h"
 
 #if defined(_WIN32) && defined(OPENSSL_USE_APPLINK)
 #include <openssl/applink.c>
