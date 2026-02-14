@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.11)
 add_library(httplib STATIC httplib.cpp)
 if (DEFINED CPPHTTPLIB_OPENSSL_DIR) 
+  message(STATUS "OpenSSL dir provided: ${CPPHTTPLIB_OPENSSL_DIR}")
   target_include_directories(httplib PRIVATE 
     "${CPPHTTPLIB_OPENSSL_DIR}/include"
   )
@@ -9,4 +10,8 @@ if (DEFINED CPPHTTPLIB_OPENSSL_DIR)
     "${CPPHTTPLIB_OPENSSL_DIR}/lib"
   )
 endif()
-target_compile_definitions(httplib PRIVATE CPPHTTPLIB_OPENSSL_SUPPORT)
+target_compile_definitions(
+  httplib PRIVATE 
+  CPPHTTPLIB_NO_PLATFORM_COMPATIBILITY_CHECK 
+  CPPHTTPLIB_OPENSSL_SUPPORT
+)

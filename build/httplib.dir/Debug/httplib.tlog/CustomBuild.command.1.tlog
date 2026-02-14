@@ -1,0 +1,10 @@
+^C:\USERS\TRBAR\PROJECTS\HN\DEPS\HTTPLIB\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/trbar/Projects/hn/deps/httplib -BC:/Users/trbar/Projects/hn/deps/httplib/build --check-stamp-file C:/Users/trbar/Projects/hn/deps/httplib/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
