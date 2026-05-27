@@ -7,8 +7,11 @@ if (DEFINED CPPHTTPLIB_OPENSSL_DIR)
   )
   target_link_directories(
     httplib PRIVATE 
-    "${CPPHTTPLIB_OPENSSL_DIR}/lib"
+   "${CPPHTTPLIB_OPENSSL_DIR}/lib"
   )
+endif()
+if (DEFINED CPPHTTPLIB_OPENSSL_LIBS)
+  target_link_libraries(httplib PRIVATE ${CPPHTTPLIB_OPENSSL_LIBS})
 endif()
 target_compile_definitions(
   httplib PRIVATE 
